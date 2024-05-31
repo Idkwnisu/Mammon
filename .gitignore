@@ -9,6 +9,12 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/Assets/LeanTween/
+/Assets/Mindtricks/3dModels/
+/Assets/Mindtricks/Fonts/
+/Assets/Mindtricks/Textures/
+
+
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -46,6 +52,7 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.apk
 
 # Unity3D generated meta files
 *.pidb.meta
