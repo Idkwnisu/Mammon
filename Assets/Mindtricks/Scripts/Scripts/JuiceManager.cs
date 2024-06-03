@@ -12,7 +12,7 @@ public class JuiceManager : MonoBehaviour
     public float backTime;
 
     public Vector3 moveToTextEnemyHit;
-    public Vector2 moveToTextPlayerHit;
+    public Vector3 moveToTextPlayerHit;
     public float damageHitTime;
     public float damageHitTimePlayer;
 
@@ -81,7 +81,7 @@ public class JuiceManager : MonoBehaviour
 
         damageTextPlayer.text = damage.ToString();
         damageTextPlayer.transform.position = lifeText.transform.position;
-        LeanTween.move(damageTextPlayer.rectTransform, lifeText.rect.position + moveToTextPlayerHit, damageHitTimePlayer).setEase(LeanTweenType.easeOutBounce);
+        LeanTween.move(damageTextPlayer.gameObject, lifeText.transform.position + moveToTextPlayerHit, damageHitTimePlayer).setEase(LeanTweenType.easeOutBounce);
         LeanTween.value(damageTextPlayer.gameObject, updateCallbackDamageTextPlayer, 1, 0, 0.5f).setDelay(damageHitTime).setOnComplete(DeactivateDamageTextPlayer);
     }
 
@@ -107,4 +107,12 @@ public class JuiceManager : MonoBehaviour
     {
         damageTextPlayer.gameObject.SetActive(false);
     }
+
+    public void ScaleJuice(CanvasGroup juiced, float time,float delay, float scale, System.Action onComplete, System.Action<float> onUpdate)
+    {
+        LeanTween.scale(juiced.gameObject, Vector3.one * scale, time).setDelay(delay).setEase(LeanTweenType.linear).setOnComplete(onComplete);
+        LeanTween.alphaCanvas(juiced, 0, time / 3).setDelay(time / 3 * 2).setOnUpdate(onUpdate);
+    }
+
+
 }

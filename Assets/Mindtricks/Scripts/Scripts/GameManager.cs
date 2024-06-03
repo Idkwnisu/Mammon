@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject deadPanel;
 
+
     public void Start()
     {
         NewGame();
