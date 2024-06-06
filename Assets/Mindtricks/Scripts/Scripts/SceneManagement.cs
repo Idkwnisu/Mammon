@@ -29,4 +29,9 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene("Tutorial");    
     }
 
+    public void GoToEndGame()
+    {
+        SceneManager.LoadScene("EndGame");
+    }
+
 }

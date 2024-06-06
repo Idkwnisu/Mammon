@@ -24,6 +24,8 @@ public class MonsterManager : MonoBehaviour
     public TMP_Text multText;
     public TMP_Text enemyName;
     public float multiplier = 1.0f;
+
+    public UnityEvent endGame;
     public void NewGame()
     {
         killed = 0;
@@ -54,6 +56,10 @@ public class MonsterManager : MonoBehaviour
                 if(killed >= difficultyRise[encyclopedia.difficulty])
                 {
                     encyclopedia.RaiseDifficulty();
+                }
+                else
+                {
+                    endGame.Invoke();
                 }
             }
             enemyDead.Invoke();
