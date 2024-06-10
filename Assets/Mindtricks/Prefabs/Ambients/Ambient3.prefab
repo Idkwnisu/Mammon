@@ -68,7 +68,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 18, y: 683.52}
+  m_AnchoredPosition: {x: 18, y: 140.81982}
   m_SizeDelta: {x: 1316.4413, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5433873093277364507
@@ -126,8 +126,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 86
+  m_fontSizeBase: 86
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -277,10 +277,22 @@ PrefabInstance:
       value: Shiny catacombs, a labyrinth of black mirrors, reflecting lights coming
         from nowhere
       objectReference: {fileID: 0}
+    - target: {fileID: 366028497846965501, guid: 373c22f6fd2220e43aa2abf57083fa5a, type: 3}
+      propertyPath: m_fontSize
+      value: 65.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 366028497846965501, guid: 373c22f6fd2220e43aa2abf57083fa5a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 65.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1804776784600194376, guid: 373c22f6fd2220e43aa2abf57083fa5a, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 814c0356915a857479353b4d8c57a931, type: 3}
+    - target: {fileID: 4721408127208162634, guid: 373c22f6fd2220e43aa2abf57083fa5a, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5157966647749292499, guid: 373c22f6fd2220e43aa2abf57083fa5a, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -34, y: 613}
+  m_AnchoredPosition: {x: -40.31351, y: 177.36658}
   m_SizeDelta: {x: 1418.9053, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8419807237056530607
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 86
+  m_fontSizeBase: 86
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -277,10 +277,22 @@ PrefabInstance:
       value: A tower, once staggering and full of light, now forever engorged in
         the earth
       objectReference: {fileID: 0}
+    - target: {fileID: 366028497846965501, guid: 373c22f6fd2220e43aa2abf57083fa5a, type: 3}
+      propertyPath: m_fontSize
+      value: 65.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 366028497846965501, guid: 373c22f6fd2220e43aa2abf57083fa5a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 65.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1804776784600194376, guid: 373c22f6fd2220e43aa2abf57083fa5a, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ce7b80619e7794d4aa7d2c170cc676a7, type: 3}
+    - target: {fileID: 4721408127208162634, guid: 373c22f6fd2220e43aa2abf57083fa5a, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5157966647749292499, guid: 373c22f6fd2220e43aa2abf57083fa5a, type: 3}
       propertyPath: m_Pivot.x
       value: 0

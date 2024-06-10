@@ -57,10 +57,10 @@ public class MonsterManager : MonoBehaviour
                 {
                     encyclopedia.RaiseDifficulty();
                 }
-                else
-                {
-                    endGame.Invoke();
-                }
+            }
+            else
+            {
+                endGame.Invoke();
             }
             enemyDead.Invoke();
         }
