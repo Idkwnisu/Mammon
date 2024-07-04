@@ -19,4 +19,4 @@ MonoBehaviour:
   texture: {fileID: 21300000, guid: e223bb0bd1a057d4288ec256412f5a6e, type: 3}
   suit: 1
   hint: Minus 10 to score, but deals 0 damage
-  color: {r: 0.088679194, g: 1, b: 0.93794495, a: 1}
+  color: {r: 0.19754349, g: 0.6754716, b: 0.64251107, a: 1}

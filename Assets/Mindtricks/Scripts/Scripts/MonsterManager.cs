@@ -26,6 +26,7 @@ public class MonsterManager : MonoBehaviour
     public float multiplier = 1.0f;
 
     public UnityEvent endGame;
+    public Animator animator;
     public void NewGame()
     {
         killed = 0;
@@ -47,6 +48,7 @@ public class MonsterManager : MonoBehaviour
     public void Damage(int dmg)
     {
         currentHealth -= dmg;
+        animator.SetTrigger("Slash");
         JuiceManager.Instance.HitEnemy(dmg);
         if(currentHealth <= 0)
         {
@@ -56,6 +58,7 @@ public class MonsterManager : MonoBehaviour
                 if(killed >= difficultyRise[encyclopedia.difficulty])
                 {
                     encyclopedia.RaiseDifficulty();
+                    killed = 0;
                 }
             }
             else

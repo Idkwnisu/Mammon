@@ -19,4 +19,4 @@ MonoBehaviour:
   texture: {fileID: 21300000, guid: 260734f2767673c49b95b2b3444177ae, type: 3}
   suit: 0
   hint: Deal 3 damage instead of 1
-  color: {r: 1, g: 0, b: 0, a: 1}
+  color: {r: 0.78113204, g: 0.1459095, b: 0.1459095, a: 1}

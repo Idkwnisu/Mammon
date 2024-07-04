@@ -16,7 +16,7 @@ MonoBehaviour:
   value: 5
   altValue: 5
   rank: 5
-  texture: {fileID: 21300000, guid: dbbddbaee89489748aa0f04eb553c74e, type: 3}
+  texture: {fileID: 21300000, guid: 22b3d91538a9bc043b612375d5298d73, type: 3}
   suit: 2
   hint: Restores 5 health if it deals damage
   color: {r: 1, g: 1, b: 1, a: 1}
