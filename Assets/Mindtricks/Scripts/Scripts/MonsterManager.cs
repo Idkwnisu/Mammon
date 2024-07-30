@@ -24,6 +24,7 @@ public class MonsterManager : MonoBehaviour
     public TMP_Text multText;
     public TMP_Text enemyName;
     public float multiplier = 1.0f;
+    public float enemyDeadDelay = 1.0f;
 
     public UnityEvent endGame;
     public Animator animator;
@@ -45,7 +46,7 @@ public class MonsterManager : MonoBehaviour
         enemyName.text = newMonster.monsterName;
     }
 
-    public void Damage(int dmg)
+    public bool Damage(int dmg)
     {
         currentHealth -= dmg;
         animator.SetTrigger("Slash");
@@ -65,16 +66,27 @@ public class MonsterManager : MonoBehaviour
             {
                 endGame.Invoke();
             }
-            enemyDead.Invoke();
+            Invoke("EnemyDead", enemyDeadDelay);
+            text.text = currentHealth.ToString();
+
+            return true;
         }
         else
         {
             hadm.NewSerie();
+            text.text = currentHealth.ToString();
+
+            return false;
         }
-        text.text = currentHealth.ToString();
     }
 
-    public void DamageWithHand(List<PlayingCard_Struct> hand)
+    public void EnemyDead()
+    {
+        enemyDead.Invoke();
+
+    }
+
+    public bool DamageWithHand(List<PlayingCard_Struct> hand)
     {
         int damage = 0;
         for(int i = 0; i < hand.Count; i++)
@@ -110,11 +122,11 @@ public class MonsterManager : MonoBehaviour
 		int n = handler.CheckHand(hand.ToArray());
 		if(n == 1)
 		{
-			Damage(Mathf.FloorToInt(damage * 2.0f * multiplier));
+			return Damage(Mathf.FloorToInt(damage * 2.0f * multiplier));
 		}
 		else
 		{
-			Damage(Mathf.FloorToInt(damage * multiplier));
+            return Damage(Mathf.FloorToInt(damage * multiplier));
 		}
     }
 

@@ -17,19 +17,21 @@ public class HandAndDeckManager : MonoBehaviour
     public UnityEvent<List<PlayingCard_Struct>> serie21;
     public UnityEvent newSerie;
 
-    public UnityEvent<List<PlayingCard_Struct>> finalize;
+    public UnityEvent finalize;
     // Start is called before the first frame update
 
     public SequenceHandler seqHandler;
     public GridCreator grid;
     public GameObject parent;
     public GameObject template;
+    public MonsterManager monsterManager;
 
     public int debugNumber = 13;
     public int maxHands = 5;
     private int handsLeft;
     public TMP_Text handsText;
     public TMP_Text deckText;
+    public float animationTimeHands = 1.5f;
 
     public GameObject negativeOne;
     public GameObject negativeTwo;
@@ -181,10 +183,30 @@ public class HandAndDeckManager : MonoBehaviour
         }
     }
 
+    public void DamageWithHand()
+    {
+        if(!monsterManager.DamageWithHand(currentSerie))
+        {
+            if (handsLeft <= 0)
+            {
+                Invoke("LostHand", animationTimeHands);
+            }
+        }
+    }
+
+    public void CheckIfDead()
+    {
+        if(handsLeft <= 0)
+        {
+            Invoke("LostHand", animationTimeHands);
+
+        }
+    }
+
     public void FinalizeHand()
     {
 
-        finalize.Invoke(currentSerie);
+        finalize.Invoke();
         CancelSerie();
        // NewSerie();
 
@@ -231,7 +253,7 @@ public class HandAndDeckManager : MonoBehaviour
 
         if (handsLeft < 0)
         {
-            lostHands.Invoke();
+            Invoke("LostHand", animationTimeHands);
         }
         else
         {
@@ -240,5 +262,10 @@ public class HandAndDeckManager : MonoBehaviour
         }
 
         newSerie.Invoke();
+    }
+
+    public void LostHand()
+    {
+        lostHands.Invoke();
     }
 }
